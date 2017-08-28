@@ -1,0 +1,658 @@
+/* I have all of my selectors and property elements lined up with the same
+indentation. When I upload to github, it looses the indent on some of them.*/
+
+html {
+	
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 24px;
+	color: #333333
+}
+/* -------------------------------------------------------------------------------------------------*/
+/*I don't like the way the full size screen shrinks, so I made intermediate sizes with smaller text */
+@media only screen and (min-width:501px) and (max-width:700px) {
+html {font-size: 16px;}}
+@media only screen and (min-width:701px) and (max-width:850px) {
+html {font-size: 20px;}}
+/* -------------------------------------------------------------------------------------------------*/
+body {
+	margin: 0;
+	padding: 0;
+	background-color: WhiteSmoke;
+}
+/* -------------------- Header -------------------- */
+
+header {
+	display: flex;
+	align-items: center;
+	height: 2.5rem;
+	background-color: WhiteSmoke;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #333333;
+}
+.logo {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	font-family: 'Cabin Condensed', sans-serif;
+	margin-left: .5rem;
+}
+.logo img {
+	height: 2rem; 
+	padding-top: 0.5rem;
+}
+.colmar {
+	color: #333333;
+	font-weight: 700;
+}
+.academy {
+	color: #999999;
+}
+nav {
+	list-style: none;
+}
+nav.desktop {
+	justify-content: flex-end;
+	margin-right: 0.5rem;
+}
+nav.desktop li {
+	display: inline-block;
+    align-items: center;
+}
+nav.desktop li a {
+	text-decoration: none;
+	color: #333333;
+	padding: .2rem;
+	border: 2px solid WhiteSmoke;
+	border-radius: 6px;
+}
+nav.desktop li a:hover {
+	color: 	WhiteSmoke;
+	background-color: #333333;
+}
+nav.mobile {
+    list-style: none;
+    justify-content: center;
+    align-content: center;
+}
+nav.mobile li {
+	display: inline-block; 
+}
+nav.mobile li a {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding:  0 0.2rem;
+	margin: 0 0.5rem;
+	height: 1.5rem;
+    width: auto;
+}
+nav.mobile li a:hover {
+    background-color: #cccccc;
+    opacity: 50%;
+}
+/* ----- header media queries ----- */
+
+@media only screen and (max-width:500px) {
+	nav.desktop {
+		display: none;
+	}
+	.logo {
+		display: none;
+	}
+	header {
+		justify-content: space-around;
+		height: 2rem;
+		width:100%;
+	}
+}
+@media only screen and (min-width:501px) {
+	nav.mobile {
+		display: none;
+	}
+}
+/* -------------------- Banner -------------------- */
+
+.banner {
+	background-color: #cccccc;
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+	padding-top: 2.5rem;
+}
+.banner-photo {
+	padding: 1.5rem 1rem;
+	width: 60%;
+	display: block;
+}
+.banner-photo img {
+	width: 100%;
+	height: auto;
+}
+.banner .start {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+.start h1 {
+	font-weight: bold;
+	font-size: 2rem;
+	width: 90%;
+    margin: 0;
+}
+.start h3 {
+	font-size: 1rem;
+	width: 90%;
+	padding: 1rem 0;
+}
+.btn a {
+	text-decoration: none;
+	width: 90%; 
+	font-size: 1rem;
+	background-color: #333333;
+	border: 4px solid #333333;
+	color: #cccccc;
+	display: inline-block;
+	justify-content: center;
+	line-height: 2;
+	transition: color .1s linear .1s;
+	border-radius: 6px;
+	text-align: center;
+}
+.btn a:hover {
+	color: #333333;
+	background-color: #cccccc;
+	border: 4px solid #333333;
+}
+.btn a:active {
+	box-shadow: 5px 5px 5px #262626;
+}
+/* ----- banner media queries ----- */
+
+@media only screen and (max-width:500px) {
+	.banner {
+		display: flex;
+		flex-direction: column;
+	}
+	.banner-photo {
+		padding: 0 0;
+		width: 100%;
+		display: block;
+	}
+	.banner .start {
+		width: 100%;
+		align-content: center;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+	.banner .start h1 {
+		font-size: 1.5rem;
+		width: 90%;
+		padding: 0 1rem;
+		line-height: 1.5rem;
+		margin: 0;
+	}
+	.banner .start h3 {
+		font-size: 1rem;
+		width: 90%;
+		padding: 0 1rem;
+		margin: 0.5rem 0;
+	}
+	.btn {
+		width: auto;
+		font-size: 1rem;
+		line-height: 1.5;
+		margin: 0 1rem;
+	}
+	.btn a {
+	width: 95%; 
+	}
+}
+/* -------------------- Information -------------------- */
+
+.information {
+	display: inline-flex;
+	background-color: WhiteSmoke;
+	width: 100%;
+}
+.main-photo {
+	padding: 1.5rem 1rem 0 1rem;
+	width: 60%;
+	display: block;
+}
+.main-photo img {
+	width: 100%;
+	height: auto;
+}
+.main-photo h2 {
+	font-weight: bold;
+	font-size: 1.5rem;
+	line-height: 3rem;
+}
+.main-photo span {
+	font-size: 0.8rem;
+	width: 90%;
+    margin: 0;
+}
+.main-photo .label {
+	font-size: 0.7rem;
+	font-weight: bold;
+	line-height: 3rem;
+}
+.info {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	padding-top: 1rem;
+	background-color: whitesmoke;
+}
+.info .subject1 {
+	display: inline-flex;
+    border: 1px solid #cccccc;
+}
+.info .subject1:hover {
+    background-color: #cccccc;
+}
+.subject1 .photo {
+	width: 35%;
+	display: block;
+	padding: 0.5rem;
+}
+.subject1 img {
+	width: 100%;
+	height: auto;
+}
+.subject1 .text {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	align-content: center;
+}
+.info .text h3 {
+	font-size: 1rem;
+	width: 90%;
+    margin: 0;
+    padding: 1rem 0 0.8rem 0;
+	font-weight: bold;
+}	
+.info .text span {
+	font-size: 0.8rem;
+	width: 90%;
+    margin: 0;
+}
+.info .text a {
+	font-size: 0.8rem;
+	text-decoration: none;
+	color: Blue;
+	border: 2px solid WhiteSmoke;
+	background-color: WhiteSmoke;
+	border-radius: 4px;
+	line-height: 1.5rem;
+    margin: 0.8rem 0 0 -4px;
+}
+.info .text a:hover {
+	background-color: #333333;
+	color: GhostWhite;
+	border: 2px solid #333333;
+	border-radius: 4px;
+}
+/* ----- information media queries ----- */
+
+@media only screen and (max-width:500px){
+	.main-photo {
+		display: none;
+	}
+	.info {
+		width: 100%;
+	}
+	.info .subject1 {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.subject1 .text {
+		width: 90%;
+		padding: 0 0 0.8rem 1rem;
+	}
+	.subject1 .photo {
+		display: none;
+	}
+	.info .subject1:hover {
+		background-color: #d9d9d9;
+	}
+	.subject1 .photo-mobile img {
+		width: 100%;
+	}
+}
+@media only screen and (min-width:501px){
+	.subject1 .photo-mobile {
+		display: none;
+	}
+}
+/* -------------------- Courses -------------------- */
+
+.course-catalog {
+	display: flex;
+	flex-direction: column;
+	background-color: #bfbfbf;
+	width: 100%;
+	align-items: center;
+}
+.course {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 85%;
+	justify-content: space-around;
+	padding: 1rem;
+}
+.course-name .photo img {
+    width: 100%;
+    height: auto;
+}
+.heading h2 {
+	font-weight: bold;
+	font-size: 1.5rem;
+	display: block;
+	text-align: center;
+	line-height: 1.5rem;
+	padding-top: 1rem;
+}
+.course-name {
+	width: 30%;
+	background-color: WhiteSmoke;
+	margin-bottom: 1rem;
+}
+.course-name:hover {
+    background-color: #d9d9d9;
+}
+.course-name .text {
+	padding: 0 0.6rem 0.6rem 0.6rem;
+    margin: 0.2rem 0 0 0;
+}
+.course .text a {
+	font-size: 1rem;
+	line-height: 0.8rem;
+    text-decoration: none;
+    color: #333333;
+	background-color: WhiteSmoke;
+    font-weight: bold;
+    border: 4px solid WhiteSmoke;
+    border-radius: 4px;
+    margin: 1rem 0 0 -4px;
+}
+ .course .text a:hover {
+	color: WhiteSmoke;
+    background-color: #333333;
+    border: 4px solid #333333;
+    border-radius: 4px;
+}   
+.course-name .text span {
+	font-size: 0.8rem;
+    margin: 0;
+}
+.course img {
+	width: 100%;
+	height: auto;
+}
+.course h3 {
+	font-size: 1rem;
+	line-height: 0.8rem;
+}
+.course h4 {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	line-height: 0.8rem;
+	margin: 0.4rem 0 0.2rem 0;
+}
+/* ----- course media queries ----- */
+
+@media only screen and (max-width:500px){
+	.course-catalog {
+		width: 100%;
+		background-color: WhiteSmoke;
+	}
+	.course {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+	}
+	.course-name {
+		width: 100%;
+		display: none;
+	}
+	.mobile-course1 a, .mobile-course2 a, .mobile-course3 a,
+	.mobile-course4 a, .mobile-course5 a, .mobile-course6 a {
+		color: #333333;
+		background-color: #cccccc;
+		width: 85%;
+		height: 3rem;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		margin: 0.1rem;
+		transition: height 1s ease-in .1s;
+		transition: font-size 1s ease-in .1s;
+		font-size: 1rem;
+		font-weight: bold;
+		padding: 0 1rem;
+	}
+	.mobile-course1 a:hover {
+		background-image: url("../images/course-software.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+	.mobile-course2 a:hover {
+		background-image: url("../images/course-computer-art.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+	.mobile-course3 a:hover {
+		background-image: url("../images/course-design.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+	.mobile-course4 a:hover {
+		background-image: url("../images/course-data.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+	.mobile-course5 a:hover {
+		background-image: url("../images/course-business.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+	.mobile-course6 a:hover {
+		background-image: url("../images/course-marketing.jpg");
+		height: 272px;
+		color: white;
+		font-weight:bold;
+		font-size: 2rem;
+		align-items: flex-end;
+	}
+}
+@media only screen and (min-width:501px){
+	.mobile-course1 a, .mobile-course2 a, .mobile-course3 a,
+	.mobile-course4 a, .mobile-course5 a, .mobile-course6 a {
+		display: none;
+	}
+}
+/* -------------------- Thesis -------------------- */
+
+.thesis {
+	width: 100%;
+	background-color: WhiteSmoke;
+	padding-bottom: 1rem;
+}
+.thesis .heading h2 {
+	padding: 1rem 0;	
+}
+.urban {
+	display: inline-flex;
+	width: 100%;
+}
+.video {
+	width: 60%;
+	margin: 0 1rem 1rem 1rem;
+	display: block;
+}
+.video video {
+	width: 100%;
+	height: auto;
+}
+.thesis .subject2 {
+	display: inline-flex;
+	border: 1px solid #cccccc;
+    align-content: center;
+}
+.thesis .subject2:hover {
+    background-color: #cccccc;
+}
+.subject2 .text a {
+	font-size: 0.8rem;
+	text-decoration: none;
+	color: Blue;
+	border: 2px solid GhostWhite;
+	background-color: GhostWhite;
+	border-radius: 4px;
+	line-height: 1.5rem;
+    margin: 0.8rem 0 0 -4px;
+}
+.subject2 .text a:hover {
+	background-color: #333333;
+	color: GhostWhite;
+	border: 4px solid #333333;
+	border-radius: 4px;
+}
+.sidebar {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 1rem 0 0;
+}
+.subject2 {
+	width: 100%;
+    align-content: center;
+}
+.subject2 .photo {
+	width: 35%;
+	padding: .6rem;
+}
+.subject2 .photo img {
+	width: 100%;
+	height: auto;
+}
+.subject2 .text {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+    margin: 0;
+}
+.urban h3 {
+	font-size: 1rem;
+	width: 90%;
+    margin: 0;
+    padding: 1rem 0 0.8rem 0;
+	font-weight: bold;
+}
+.subject2 .text h3 {
+	font-size: 1rem;
+	width: 90%;
+    margin: 0;
+    padding: 1rem 0 0.8rem 0;
+	font-weight: bold;
+}	
+.subject2 .text span {
+	font-size: 0.8rem;
+	width: 90%;
+    margin: 0;
+}
+/* ----- thesis media queries ----- */
+
+@media only screen and (max-width:500px){	
+	.sidebar {
+		display: none;
+	}
+	.video h2 {
+		display: none; 
+	}
+	.video span {
+		display: none;
+	}
+	.urban {
+		display: flex;
+		width: 100%;
+	}
+	.urban .video h3 {
+		display: none;
+	}
+	.video {
+		width: 100%;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
+	.video video {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+/* -------------------- Footer -------------------- */
+
+footer {
+	display: flex;
+	align-items: center;
+	height: 3rem;
+	padding: 0 1rem;
+	background-color: WhiteSmoke;
+	font-size: 0.8rem;
+	border-top: 1px solid #333333;
+}
+.copyright {
+	flex-grow: 1;
+}
+.links {
+	list-style: none;
+	justify-content: flex-end;
+}
+.links li {
+	display: inline-block;
+}
+.links li a {
+	text-decoration: none;
+	color: #333333;
+	padding-right: .2rem;
+}
+.links li a:hover {
+	color: 	WhiteSmoke;
+	background-color: #333333;
+	border: 2px solid #333333;
+	border-radius: 6px;
+}
+/* ----- footer media queries ----- */
+
+@media only screen and (max-width:500px){
+	footer .links {
+		display: none;
+	}
+}
